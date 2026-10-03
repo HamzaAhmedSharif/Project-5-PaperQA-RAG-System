@@ -1,0 +1,12 @@
+# Streamlit Cloud Secrets Configuration (Example)
+# 
+# Copy these lines into Streamlit Cloud's Settings > Secrets panel
+# to use a lighter-weight generation model for memory-constrained deployments.
+#
+# Default (no secrets set): google/flan-t5-base with num_beams=4
+# This configuration: google/flan-t5-small with num_beams=1 + bfloat16
+#
+# Note: Do NOT commit actual secrets.toml files. This is an example template only.
+
+PAPERQA_GENERATION_MODEL = "google/flan-t5-small"
+PAPERQA_NUM_BEAMS = "1"
