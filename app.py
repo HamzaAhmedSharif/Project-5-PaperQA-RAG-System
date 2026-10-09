@@ -31,8 +31,8 @@ def _get_config_value(key, default):
     return os.environ.get(key, default)
 
 
-GENERATION_MODEL_NAME = _get_config_value("PAPERQA_GENERATION_MODEL", "google/flan-t5-base")
-NUM_BEAMS = int(_get_config_value("PAPERQA_NUM_BEAMS", "4"))
+GENERATION_MODEL_NAME = _get_config_value("PAPERQA_GENERATION_MODEL", "google/flan-t5-small")
+NUM_BEAMS = int(_get_config_value("PAPERQA_NUM_BEAMS", "1"))
 
 # Lightweight config uses flan-t5-small with bfloat16 and low_cpu_mem_usage
 IS_LIGHTWEIGHT = GENERATION_MODEL_NAME == "google/flan-t5-small"
