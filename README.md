@@ -74,10 +74,7 @@ Then open http://localhost:8501
 **Docker**: Documented for local reproducibility only; not hosted publicly.
 
 
-**Streamlit Community Cloud**: Investigated and **not deployed**. The free tier enforces a ~1 GB memory limit. Measured configurations:
-- `flan-t5-base` + `num_beams=4` (fp32) → ~1.7–2.0 GB peak during generation
-- `flan-t5-small` + `num_beams=1` (bfloat16, `low_cpu_mem_usage=True`) → ~1.25 GB peak during generation
+**Streamlit Community Cloud**: The app was first deployed on Hugging Face Spaces, then moved to Streamlit Community Cloud, where it is now live at https://project-5-paperapp-rag-system.streamlit.app/. It runs the lightweight `flan-t5-small` configuration to fit the free tier's ~1 GB memory limit.
 
 
-Neither configuration fits reliably under the 1 GB ceiling at acceptable quality. The lightweight config (`PAPERQA_GENERATION_MODEL=google/flan-t5-small`, `PAPERQA_NUM_BEAMS=1`) is kept in the codebase for experimentation but is not deployed anywhere.
 The result is a lightweight, cost‑effective, and transparent RAG system that anyone can deploy for free.
