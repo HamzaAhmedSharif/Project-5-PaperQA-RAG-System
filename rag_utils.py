@@ -39,7 +39,7 @@ def chunk_text(pages_text, chunk_size=500, overlap_sentences=2):
         if current_len >= chunk_size:
             chunks.append(" ".join(s for _, s in current))
             chunk_pages.append(current[0][0])
-            current = current[-overlap_sentences:] if len(current) > overlap_sentences else current[:]
+            current = [] if overlap_sentences == 0 else (current[-overlap_sentences:] if len(current) > overlap_sentences else current[:])
             current_len = sum(len(s) for _, s in current)
     if current:
         chunks.append(" ".join(s for _, s in current))
